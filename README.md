@@ -64,15 +64,7 @@ Die folgenden Tools müssen installiert sein:
 
 1. Klone dieses Repository:
 
-```bash
-git clone git@gitlab.rz.htw-berlin.de:s0574247/adm-semesterprojekt.git
-```
-
 2. Wechsle in das Verzeichnis des geklonten Repositories:
-
-```bash
-cd adm-semesterprojekt
-```
 
 3. Installiere die Pre-Commit Hooks:
 
@@ -92,12 +84,6 @@ cd projects/<dein_kürzel>
 uv sync
 ```
 
-6. Erstelle einen Branch für die Entwicklung:
-
-```bash
-git checkout -b <branch_name>
-```
-
 ## Entwicklung mit uv
 
 Immer wenn du Python-Code mit `uv` ausführen möchtest, musst du dies in deinem Projektverzeichnis tun. Bitte lese dir dazu die [uv-Dokumentation](https://docs.astral.sh/uv/) durch.
@@ -110,25 +96,6 @@ Wenn in einem Projekt mehrere Algorithmen implementiert und verglichen werden, s
 
 Die Implementierung eines Algorithmus erfolgt in der `_solve()`-Methode, die in der erbenden `BaseSolver`-Klasse implementiert werden soll. Diese Methode wird von der `run()`-Methode aufgerufen, die das Aufrufen und Profiling des Algorithmus ermöglicht.
 
-## Pre-Commit Hooks
-
-Pre-Commit Hooks sind Skripte, die vor dem Commit eines Codes ausgeführt werden, um sicherzustellen, dass der Code den festgelegten Standards entspricht.
-
-In diesem Repository sind Pre-Commit Hooks konfiguriert, um sicherzustellen, dass der Code den [PEP 8](https://peps.python.org/pep-0008/) Standards entspricht und keine Fehler enthält.
-Konkret ist `ruff` als Checker und Formatter konfiguriert.
-Um die Pre-Commit Hooks zu aktivieren, führe, falls nicht schon bei der Installation getan, den folgenden Befehl im Wurzelverzeichnis des Repositories aus:
-
-```bash
-task install-hooks
-```
-
-Wenn du ab jetzt `git commit` ausführst, werden die folgenden Hooks automatisch ausgeführt:
-
-1. **Check**: Testes alle Python-Dateien den Commits auf Syntaxfehler und PEP-8-Konformität.
-2. **Format**: Formatiert alle Python-Dateien. (Wenn eine Datei formatiert wurde, müssen die Änderungen gestaged werden, um die Änderungen auf den Commit zu übernehmen.)
-
-Anschließend kannst du den Commit mit `git commit` abschließen.
-
 ## Docs mit Sphinx
 
 Dieses Projekt wird mit einer konfigurierten Sphinx-Instanz Dokumentiert.
@@ -136,20 +103,6 @@ Damit euer Projekt (README und Code) in der Dokumentation erscheint, müssen ein
 
 - **README**: Jedes Projekt sollte eine eigene `README.md`-Datei im Projektverzeichnis haben, die Informationen zu dem Projekt enthält. Diese Datei wird automatisch in die Sphinx-Dokumentation eingebaut. Der Pfad zu dieser Datei ist z.B.: `/projects/tsp/README.md`.
 - **Python-Code**: Der Python-Code (Klassen/ Funktionen) eures Projektes wird automatisch in die Sphinx-Dokumentation eingebaut, wenn er in der `__init__.py`-Datei des Projektes importiert wird. Diese Datei befindet sich im Quellcode-Verzeichnis eures Projektes, z.B. `/projects/tsp/tsp/__init__.py`. Zum Beispiel so:
-
-```python
-# Example for /projects/sort/sort/__init__.py
-from sort.solver import BubblesortSolver, MergesortSolver
-from sort.base import BasesortSolver
-from sort.utils import useful_function
-
-__all__ = [
-    "BasesortSolver",
-    "MergesortSolver",
-    "BubblesortSolver",
-    "useful_function",
-]
-```
 
 - **Docstrings**: Jede Klasse oder Funktion, die in der Sphinx-Dokumentation erscheinen soll, sollte mit einem Docstring versehen sein. Die Docstrings sollten im [Google](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings) oder reST-Format verfasst sein, damit sie von Sphinx korrekt interpretiert werden können.
 
