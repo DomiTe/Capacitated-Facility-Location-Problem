@@ -1,0 +1,14 @@
+version: 3
+
+tasks:
+    gen:
+        desc: "Build documentation with Sphinx"
+        dir: "{{.TASKFILE_DIR}}"
+        cmds:
+            - uv run sphinx-build -a -b html docs/source docs/build
+
+    serve:
+        desc: "Serve documentation with Sphinx"
+        dir: "{{.TASKFILE_DIR}}"
+        cmds:
+            - uv run python -m http.server -d docs/build/

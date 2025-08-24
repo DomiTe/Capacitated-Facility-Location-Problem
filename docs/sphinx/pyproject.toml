@@ -1,0 +1,47 @@
+[project]
+name = "sphinx-docs"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "a-star",
+    "apsp",
+    "cutting-stock",
+    "facility-location",
+    "graph-coloring",
+    "index-funds",
+    "knapsack",
+    "mat-mult",
+    "max-matchings",
+    "myst-parser>=4.0.1",
+    "problib",
+    "rinohtype>=0.5.5",
+    "set-cover",
+    "sort",
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.1.0",
+    "sphinx-rtd-theme>=3.0.2",
+    "sssp",
+    "steiner-tree",
+    "tsp",
+    "ucp",
+    "vrp",
+]
+
+[tool.uv.sources]
+problib = { path = "../../lib", editable = true }
+sort = { path = "../../projects/sort", editable = true }
+max-matchings = { path = "../../projects/max_matchings", editable = true }
+sssp = { path = "../../projects/sssp", editable = true }
+apsp = { path = "../../projects/apsp", editable = true }
+tsp = { path = "../../projects/tsp", editable = true }
+vrp = { path = "../../projects/vrp", editable = true }
+knapsack = { path = "../../projects/knapsack", editable = true }
+cutting-stock = { path = "../../projects/cutting_stock", editable = true }
+graph-coloring = { path = "../../projects/graph_coloring", editable = true }
+mat-mult = { path = "../../projects/mat_mult", editable = true }
+facility-location = { path = "../../projects/facility_location", editable = true }
+index-funds = { path = "../../projects/index_funds", editable = true }
+steiner-tree = { path = "../../projects/steiner_tree", editable = true }
+set-cover = { path = "../../projects/set_cover", editable = true }
+ucp = { path = "../../projects/ucp", editable = true }
+a-star = { path = "../../projects/a_star", editable = true }
